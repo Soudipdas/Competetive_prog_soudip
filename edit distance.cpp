@@ -14,30 +14,30 @@ void solve() {
 	ll a[n2+1][n1+1];
 
 	for(ll i=0;i<=n2;i++){
-        for(ll j=0;j<=n1;j++){
-            if(i==0 && j==0){
-                a[i][j]=0;
-            }
-            else if(i==0 && j>0){
-                a[i][j]=j;
-            }
-            else if(i>0 && j==0){
-                a[i][j]=i;
-            }
-            else if(s2[i-1]==s1[j-1]){
-                a[i][j]=a[i-1][j-1];
-            }
-            else{
-                a[i][j]=1+min(min(a[i][j-1],a[i-1][j]),a[i-1][j-1]);
-            }
-        }
+		for(ll j=0;j<=n1;j++){
+		    if(i==0 && j==0){
+			a[i][j]=0;
+		    }
+		    else if(i==0 && j>0){
+			a[i][j]=j;
+		    }
+		    else if(i>0 && j==0){
+			a[i][j]=i;
+		    }
+		    else if(s2[i-1]==s1[j-1]){
+			a[i][j]=a[i-1][j-1];
+		    }
+		    else{
+			a[i][j]=1+min(min(a[i][j-1],a[i-1][j]),a[i-1][j-1]);
+		    }
+		}
 	}
 
 	for(ll i=0;i<=n2;i++){
-        for(ll j=0;j<=n1;j++){
-            cout<<a[i][j]<<" ";
-        }
-        cout<<endl;
+		for(ll j=0;j<=n1;j++){
+		    cout<<a[i][j]<<" ";
+		}
+		cout<<endl;
 	}
 	cout<<a[n1+1][n2+1]<<endl;
 }
