@@ -15,20 +15,20 @@ void solve() {
 	for(ll i=0;i<n;i++)
         cin>>a[i];
 
-    ll copyarr[n];
+        ll copyarr[n];
 
-    for(ll i=0;i<n;i++)
-        copyarr[i]=a[i];
+	for(ll i=0;i<n;i++)
+       		copyarr[i]=a[i];
 
-    for(ll i=0;i<n;i++){
-        for(ll j=0;j<i;j++){
-            if(a[i]>a[j] && copyarr[i]<copyarr[j]+a[i]){
-                copyarr[i]=copyarr[j]+a[i];
-            }
-        }
-    }
+	for(ll i=0;i<n;i++){
+        	for(ll j=0;j<i;j++){
+            		if(a[i]>a[j] && copyarr[i]<copyarr[j]+a[i]){
+                		copyarr[i]=copyarr[j]+a[i];
+            		}
+        	}
+    	}
 
-    cout<<*max_element(copyarr,copyarr+n)<<endl;
+	cout<<*max_element(copyarr,copyarr+n)<<endl;
 }
 
 
