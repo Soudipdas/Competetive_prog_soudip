@@ -13,18 +13,18 @@ void solve() {
       	cin>>a[i];
 
 	ll copyarr[n];
-    copyarr[0]=1;
+    	copyarr[0]=1;
 
    	for(ll i=0;i<n;i++){
 		copyarr[i]=1;
 		for(ll j=0;j<i;j++){
 		    if(a[i]>a[j] && copyarr[i]<copyarr[j]+1){
-				copyarr[i]=copyarr[j]+1;
+			copyarr[i]=copyarr[j]+1;
 		    }
-        }
-    }
+        	}
+    	}
 
-    cout<<*max_element(copyarr,copyarr+n)<<endl;
+    	cout<<*max_element(copyarr,copyarr+n)<<endl;
 }
 
 
