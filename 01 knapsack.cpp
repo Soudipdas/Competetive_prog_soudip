@@ -21,7 +21,7 @@ void solve() {
                 dp[i][j]=0;
             }
             else if(w[i-1]<=j){
-                dp[i][j]=max(max(dp[i-1][j],dp[i][j-1]),val[i-1]+dp[i-1][j-w[i-1]]);
+                dp[i][j]=max ( max ( dp[i-1][j] , dp[i][j-1] ) ,  val[i-1] + dp[i-1][j- w[i-1] ]);
             }
             else{
                 dp[i][j]=dp[i-1][j];
