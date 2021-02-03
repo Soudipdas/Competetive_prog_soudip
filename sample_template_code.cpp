@@ -4,6 +4,82 @@ typedef long long ll;
 #define pb push_back
 #define mp make_pair
 
+vector<vector<ll> >graph;
+vector<ll>prime;
+
+//s is the start pint of bfs
+//v+1 is the limit of vertices
+
+
+int bfs(ll s,ll v){
+    bool vis[v+1];
+    ll level[v+1]={0};
+    for(ll i=0;i<=v;i++)
+        vis[i]=false;
+    queue<ll>q;
+    q.push(s);
+    while(!q.empty()){
+        s=q.front();
+        q.pop();
+        for(ll i=0;i<graph[s].size();i++){
+            ll b=graph[s][i];
+            if(!vis[b]){
+                q.push(b);
+                level[b]=level[s]+1;
+                vis[b]=true;
+            }
+        }
+    }
+    return *max_element(level,level+v+1);
+
+}
+
+
+
+void dfs(ll u, ll vis[]){
+    vis[u]=1;
+
+    for(ll i=0;i<graph[u].size();i++){
+        ll e=graph[u][i];
+        if(vis[e]==false){
+            dfs(e,vis);
+        }
+    }
+    //return minm;
+}
+
+
+bool isPrime(ll n)
+{
+    // Corner cases
+    if (n <= 1)  return false;
+    if (n <= 3)  return true;
+
+    // This is checked so that we can skip
+    // middle five numbers in below loop
+    if (n%2 == 0 || n%3 == 0) return false;
+
+    for (ll i=5; i*i<=n; i=i+6)
+        if (n%i == 0 || n%(i+2) == 0)
+           return false;
+
+    return true;
+}
+
+void countprimes(ll n){
+    if(n<=1)
+        return;
+    prime.push_back(2);
+    for(ll i=3;i<=n;i+=2){
+        if(isPrime(i)){
+            prime.push_back(i);
+        }
+    }
+
+}
+
+
+
 ll setBitNumber(ll n){
     ll k = (ll)(log2(n));
     return (ll)(pow(2, k));
