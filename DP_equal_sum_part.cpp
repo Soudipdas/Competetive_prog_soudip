@@ -1,3 +1,19 @@
+
+/*
+    
+    TC- O(n*sum)
+    SC- O(n*sum)
+    Subset sum is a variation of 01 Knapsack
+    
+    Given a sum check if a subset having the sum exists or not -->Subset sum
+    
+    Equal sum part--> Find total sum --> if sum % 2!=0 Not possible --> Sum/2 and check if the sum occurs 
+    
+    Count of Subset sum--> You no just need to add the conditions in place of || (OR)
+    
+    Min. Sum part --> abs diff of 2 subsets must be minimum --> Same DP table as sub sum --> We have to construct DP table from 0 to sum/2 (all sum) --> Then check
+    
+*/
 class Solution{
 public:
 
