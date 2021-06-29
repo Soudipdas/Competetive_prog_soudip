@@ -49,6 +49,4 @@ vector<int> longestCommonSubsequence(vector<int> a, vector<int> b) {
     }
     reverse(v.begin(),v.end());
     return v;
-    
-    return a;
 }
