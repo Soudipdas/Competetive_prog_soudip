@@ -2,6 +2,8 @@
 bool findPair(Node* head, int k)
 {
     // Write your code here.
+    
+    //Initialize one pointer to start and another to end and do the following
     Node*first=head;
     Node*sec=head;
     while(sec->next!=NULL){
